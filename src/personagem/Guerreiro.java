@@ -1,13 +1,16 @@
 package personagem;
 
 import item.Item;
+import item.Listaitens;
 import item.Arma;
 import java.util.List;
 
 public class Guerreiro extends Personagem {
 
-    public Guerreiro(String nome, double vida, double mana, int nivel){
-        super(nome, "Guerreiro", vida, mana);
+    public Guerreiro(String nome){
+        super(nome, "Guerreiro", 100, 0);
+        List<Item> itens = Listaitens.getItensIniciaisGuerreiro();
+        getItens().addAll(itens);
     }
 
     //Metodo para atacar

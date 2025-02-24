@@ -4,11 +4,14 @@ import java.util.List;
 
 import item.Arma;
 import item.Item;
+import item.Listaitens;
 
 public class Mago extends Personagem {
     
-    public Mago(String nome, double vida, double mana, int nivel){
-        super(nome, "Mago", vida, mana);
+    public Mago(String nome){
+        super(nome, "Mago", 100, 50);
+        List<Item> itens = Listaitens.getItensIniciaisMago();
+        getItens().addAll(itens);
     }
 
     // Metodo de atacar

@@ -32,4 +32,8 @@ public abstract class Item {
         return custo;
     }
 
+    @Override
+    public String toString() {
+        return this.nome; // Ou qualquer outra descrição que você queira
+    }
 }

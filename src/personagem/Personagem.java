@@ -210,4 +210,20 @@ public abstract class Personagem {
          System.out.println("Sua experiência atual é " + this.experiencia_atual + " e a necessária para o próximo nível é " + this.experiencia_necessaria);
          System.out.println("Novos status - Vida: " + this.vida + ", Mana: " + this.mana);
       }
+
+      public void exibirInventario() {
+         System.out.println("\n📦 Inventário: ");
+     
+         List<Item> itens = getItens();  // Obtendo a lista de itens
+     
+         if (itens.isEmpty()) {
+             System.out.println("  - (Vazio)");
+             return;
+         }
+     
+         for (int i = 0; i < itens.size(); i++) {
+             System.out.println("  [" + i + "] " + itens.get(i).getNome());
+         }
+     }
+     
 }

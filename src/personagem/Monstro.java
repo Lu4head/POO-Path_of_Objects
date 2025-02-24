@@ -2,26 +2,26 @@ package personagem;
 
 import java.util.List;
 import java.util.Random;
-import java.util.ArrayList;
 import item.Item;
+import item.Listaitens;
 
 public class Monstro{
     private String nome;
     private double vida;
     private int nivel;
     private int experiencia;
-    private List<Item> drops = new ArrayList<>();
+    private List<Item> drops;
     private double dano;
 
     // Construtor
 
-    public Monstro(String nome,double vida, int experiencia, int nivel,List<Item> drops, double dano){
+    public Monstro(String nome,double vida, int experiencia, int nivel, double dano){
         this.experiencia = Math.max(0,experiencia);
-        this.drops = drops;
+        this.drops = Listaitens.getItensDrop();
         this.dano = Math.max(1,dano);
         this.nome = nome;
-        this.vida = vida;
-        this.nivel = nivel;
+        this.vida = Math.max(0, vida);
+        this.nivel = Math.max(1, nivel);
     }
 
     public Item dropsItem() {

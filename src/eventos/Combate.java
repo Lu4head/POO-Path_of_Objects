@@ -22,7 +22,7 @@ public class Combate {
             
             // Exibe inventário
             System.out.println("Inventário: ");
-            personagem.getItens();
+            personagem.exibirInventario();
 
             System.out.println("[1] - ATACAR\n[2] - CURAR\n[3] - RECUPERAR MANA");
             int escolha = sc.nextInt();
