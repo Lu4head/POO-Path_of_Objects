@@ -79,8 +79,13 @@ public abstract class Personagem {
      }
 
      // Metodos abstratos que outras classes vão implementar e usar
-     //public abstract void atacar();
+     public abstract double atacar(int escolha);
 
+     public abstract double curar(int escolha);
+
+     public abstract double regenerar(int escolha);
+
+     
      // Metodos para gerenciar o iventario
 
      public void adicionarItem(Item item){

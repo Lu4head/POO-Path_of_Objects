@@ -5,19 +5,23 @@ import java.util.Random;
 import java.util.ArrayList;
 import item.Item;
 
-public class Monstro extends Personagem{
+public class Monstro{
+    private String nome;
+    private double vida;
+    private int nivel;
     private int experiencia;
     private List<Item> drops = new ArrayList<>();
     private double dano;
 
     // Construtor
 
-    public Monstro(String nome, String classe, double vida, double mana, int experiencia, int nivel,List<Item> drops, double dano){
-        super(nome, classe, vida, mana);
-        super.setNivel(nivel);
+    public Monstro(String nome,double vida, int experiencia, int nivel,List<Item> drops, double dano){
         this.experiencia = Math.max(0,experiencia);
         this.drops = drops;
         this.dano = Math.max(1,dano);
+        this.nome = nome;
+        this.vida = vida;
+        this.nivel = nivel;
     }
 
     public Item dropsItem() {
@@ -46,8 +50,28 @@ public class Monstro extends Personagem{
         return experiencia;
     }
 
+    // Get
+
     public double getDano(){
         return dano;
+    }
+
+    public double getVida(){
+        return vida;
+    }
+
+    public String getNome(){
+        return nome;
+    }
+
+    public int getNivel(){
+        return nivel;
+    }
+
+    // Set
+
+    public void setVida(double vida){
+        this.vida = vida;
     }
 
 
