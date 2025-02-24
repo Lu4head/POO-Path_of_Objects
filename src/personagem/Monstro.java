@@ -67,6 +67,7 @@ public class Monstro{
     public int getNivel(){
         return nivel;
     }
+    
 
     // Set
 
