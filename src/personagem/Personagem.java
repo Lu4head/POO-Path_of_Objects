@@ -1,11 +1,14 @@
 package personagem;
+
 import java.util.ArrayList;
 import java.util.List;
 import item.Item;
 import item.Pocao;
 
 public abstract class Personagem {
+
     // Criação de campos privados do personagem
+
     protected String nome;
     private double vida;
     private double vida_atual;
@@ -189,7 +192,7 @@ public abstract class Personagem {
       return inventario.getItens();
      }
      
-     // Outros métodos
+     // Metodo para subri de nivel
      public void subirNivel(){
          this.nivel += 1;
          // Calcula diferença de EXP
