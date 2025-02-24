@@ -12,9 +12,9 @@ public class Habilidade {
     public Habilidade(String nome, String descricao, double dano, double mana, int nivel){
         this.nome = nome;
         this.descricao = descricao;
-        this.dano = dano;
-        this.mana = mana;
-        this.nivel = nivel;
+        this.dano = Math.max(0, dano);
+        this.mana = Math.max(0, mana);
+        this.nivel = Math.max(1, nivel);
     }
 
     // Metodos get
@@ -35,7 +35,7 @@ public class Habilidade {
         return mana;
     }
 
-    public int Nivel(){
+    public int getNivel(){
         return nivel;
     }
 }
