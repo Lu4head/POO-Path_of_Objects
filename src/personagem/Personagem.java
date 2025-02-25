@@ -20,7 +20,7 @@ public abstract class Personagem {
     private List<Habilidade> habilidades = new ArrayList<>();
     private String classe;
     private Inventario inventario;
-    private double moedas;
+    private double moedas; // tem que fazer
 
     // Construtor o personagem (falta a habilidade)
     public Personagem(String nome, String classe, double vida, double mana){
@@ -102,6 +102,14 @@ public abstract class Personagem {
 
      public void setMoedas(double moedas){
         this.moedas = moedas;
+     }
+
+     public void setVida(double vida){
+        this.vida = vida;
+     }
+
+     public void setMana(double mana){
+        this.mana = mana;
      }
 
      public void setExperiencia_atual(int experiencia_atual){
@@ -212,7 +220,7 @@ public abstract class Personagem {
       }
 
       public void exibirInventario() {
-         System.out.println("\n📦 Inventário: ");
+         System.out.println(" Inventário: ");
      
          List<Item> itens = getItens();  // Obtendo a lista de itens
      

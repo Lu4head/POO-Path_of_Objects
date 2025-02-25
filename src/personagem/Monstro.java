@@ -12,6 +12,7 @@ public class Monstro{
     private int experiencia;
     private List<Item> drops;
     private double dano;
+    // drop de moedas
 
     // Construtor
 

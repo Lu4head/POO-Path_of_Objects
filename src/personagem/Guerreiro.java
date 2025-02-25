@@ -25,7 +25,7 @@ public class Guerreiro extends Personagem {
 
         Item item = itens.get(escolha);
 
-        if (item instanceof Arma) {
+        if (item instanceof Arma) { // ajustar
             Arma arma = (Arma) item; // faz o cast para obter o dano da arma
             return arma.getDano();
         }

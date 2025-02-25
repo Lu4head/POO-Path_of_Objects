@@ -3,15 +3,13 @@ package item;
 public abstract class Item {
     private String nome;
     private String descricao;
-    private int nivel;
     private double custo;
     
     // Construtores
-     // Construtor dano
-    public Item(String nome, String descricao, int nivel, double custo){
+    
+    public Item(String nome, String descricao, double custo){
         this.nome = nome;
         this.descricao = descricao;
-        this.nivel = nivel;
         this.custo = custo;
     }
 
@@ -22,10 +20,6 @@ public abstract class Item {
 
     public String getDescricao(){
         return descricao;
-    }
-
-    public int getNivel(){
-        return nivel;
     }
 
     public double getCusto(){

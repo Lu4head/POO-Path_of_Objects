@@ -5,8 +5,8 @@ public class Pocao extends Item {
     private double regeneracao;
 
     // Construtor
-    public Pocao(String nome, String descricao, int nivel, double custo, double pocao, double mana){
-        super(nome, descricao, nivel, custo);
+    public Pocao(String nome, String descricao, double custo, double pocao, double mana){
+        super(nome, descricao, custo);
         this.cura = Math.max(0, cura);
         this.regeneracao = Math.max(0, regeneracao);
     }
