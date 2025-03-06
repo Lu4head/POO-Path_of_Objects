@@ -1,19 +1,19 @@
-package personagem;
+package habilidade;
 
-public class Habilidade {
+import personagem.Personagem;
+
+public abstract class Habilidade {
     private String nome;
     private String descricao;
-    private double dano;
-    private double mana;
+    private double custo_mana;
     private int nivel;
 
     // Construtor habilidade
 
-    public Habilidade(String nome, String descricao, double dano, double mana, int nivel){
+    public Habilidade(String nome, String descricao, double mana, int nivel){
         this.nome = nome;
         this.descricao = descricao;
-        this.dano = Math.max(0, dano);
-        this.mana = Math.max(0, mana);
+        this.custo_mana = Math.max(0, mana);
         this.nivel = Math.max(1, nivel);
     }
 
@@ -27,15 +27,13 @@ public class Habilidade {
         return descricao;
     }
 
-    public double getDano(){
-        return dano;
-    }
-
-    public double getMana(){
-        return mana;
+    public double getCusto_mana(){
+        return custo_mana;
     }
 
     public int getNivel(){
         return nivel;
     }
+
+    public abstract double usarHabilidade(Personagem jogador);
 }

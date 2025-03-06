@@ -7,7 +7,8 @@ import item.Listaitens;
 
 public class Monstro{
     private String nome;
-    private double vida;
+    private double vida_max;
+    private double vida_atual;
     private int nivel;
     private int experiencia;
     private List<Item> drops;
@@ -21,7 +22,8 @@ public class Monstro{
         this.drops = Listaitens.getItensDrop();
         this.dano = Math.max(1,dano);
         this.nome = nome;
-        this.vida = Math.max(0, vida);
+        this.vida_max = Math.max(0, vida);
+        this.vida_atual = Math.max(0, vida);
         this.nivel = Math.max(1, nivel);
     }
 
@@ -57,8 +59,12 @@ public class Monstro{
         return dano;
     }
 
-    public double getVida(){
-        return vida;
+    public double getVida_max(){
+        return vida_max;
+    }
+
+    public double getVida_atual(){
+        return vida_atual;
     }
 
     public String getNome(){
@@ -72,8 +78,12 @@ public class Monstro{
 
     // Set
 
-    public void setVida(double vida){
-        this.vida = vida;
+    public void setVida_max(double vida){
+        this.vida_max = vida;
+    }
+
+    public void setVida_atual(double vida){
+        this.vida_atual = vida;
     }
 
 

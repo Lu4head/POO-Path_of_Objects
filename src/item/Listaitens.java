@@ -17,9 +17,14 @@ public class Listaitens {
         itens_drop.add(new Pocao("Poção de Mana", "Restaura 10 de mana",  1, 0, 10));
 
         // Itens da Loja
-        itens_loja.add(new Arma("Espada Longa", "Uma lâmina poderosa", 1, 20, 0));
-        itens_loja.add(new Pocao("Poção Maior de Cura", "Restaura 25 de vida",  1, 25, 0));
-        itens_loja.add(new Pocao("Poção Maior de Mana", "Restaura 25 de mana",  1, 0, 25));
+        itens_loja.add(new Arma("Espada Longa", "Uma lâmina poderosa", 5, 20, 0));
+        itens_loja.add(new Arma("Varinha Antiga", "Um cajado enfraquecido pelo tempo",  5, 8, 5));
+        itens_loja.add(new Arma("Espada lendaria do Lojista", "Da época em que ele ainda era um herói", 100, 100, 0));
+        itens_loja.add(new Arma("Cajado do Mago Implacável", "Quando ele encontrou o Mar Morto este ainda não tinha esse nome...", 100, 150, 25 ));
+        itens_loja.add(new Pocao("Poção Maior de Cura", "Restaura 25 de vida",  7, 25, 0));
+        itens_loja.add(new Pocao("Poção Maior de Mana", "Restaura 25 de mana",  7, 0, 25));
+        itens_loja.add(new Pocao("Pocao Pequena de Cura", "Restaura 5 de vida",  3, 5, 0));
+        itens_loja.add(new Pocao("Pocao Pequena de Mana", "Restaura 5 de mana",  3, 0, 5));
 
         // Itens Iniciais do Mago
         itens_iniciais_mago.add(new Arma("Cajado de Aprendiz", "Um cajado simples",  1, 6, 10));

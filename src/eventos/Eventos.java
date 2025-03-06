@@ -10,6 +10,7 @@ public class Eventos {
     private Scanner scanner;
     private Random random;
     private Combate combate;
+    private Loja loja;
 
     public Eventos(Personagem jogador) {
         this.jogador = jogador;
@@ -39,6 +40,14 @@ public class Eventos {
             System.out.println("[3] Sair do jogo");
 
             int escolha = obterEscolhaUsuario(1, 3);
+
+            if (escolha == 1) {
+                System.out.println("\n\033[1;35mVocê continua sua jornada...\033[0m");
+                if(random.nextInt(100) <= 25){
+                    loja.acessar(jogador);
+                }
+
+            }
 
             if (escolha == 2) {
                 jogador.setVida_Atual(Math.min(jogador.getVida(), jogador.getVida_Atual() + 20));

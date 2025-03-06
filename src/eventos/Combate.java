@@ -15,7 +15,7 @@ public class Combate {
     public void batalha(Personagem personagem, Monstro monstro) {
         System.out.println("\n\033[1;33mBatalha iniciada: " + personagem.getNome() + " VS " + monstro.getNome() + "\033[0m");
 
-        while (personagem.getVida_Atual() > 0 && monstro.getVida() > 0) {
+        while (personagem.getVida_Atual() > 0 && monstro.getVida_max() > 0) {
             // Exibe status
             exibirStatus(personagem, monstro);
 
@@ -34,7 +34,7 @@ public class Combate {
                     System.out.println("Escolha o número do item para o ataque!");
                     escolha = lerEscolha(0, personagem.getItens().size() - 1);
                     double dano = personagem.atacar(escolha);
-                    monstro.setVida(monstro.getVida() - dano);
+                    monstro.setVida_atual(monstro.getVida_atual() - dano);
                     System.out.println("\033[1;36mVocê causou " + dano + " de dano no " + monstro.getNome() + "!\033[0m");
                 }
                 case 2 -> {
@@ -62,7 +62,7 @@ public class Combate {
             }
 
             // Verifica se o monstro morreu
-            if (monstro.getVida() <= 0) {
+            if (monstro.getVida_atual() <= 0) {
                 System.out.println("\n\033[1;32mParabéns! Você venceu o " + monstro.getNome() + "!\033[0m");
                 int exp_ganha = monstro.darExperiencia();
                 Item drop_item = monstro.dropsItem();
@@ -115,7 +115,7 @@ public class Combate {
         System.out.println("\033[1;32m" + personagem.getNome() + " (Você)\033[0m");
         System.out.println("Vida: " + personagem.getVida_Atual() + "/" + personagem.getVida());
         System.out.println("\033[1;31m" + monstro.getNome() + "\033[0m");
-        System.out.println("Vida: " + monstro.getVida() + "/" + monstro.getVida());
+        System.out.println("Vida: " + monstro.getVida_atual() + "/" + monstro.getVida_max());
         System.out.println("\033[1;36m----------------\033[0m\n");
     }
 }

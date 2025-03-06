@@ -32,7 +32,7 @@ public class Mago extends Personagem {
                 return 0;
             }
             setMana_Atual(getMana() - arma.getMana());
-            return arma.getDano();
+            return arma.getDano() * this.getBuff_dano();
         }
         System.out.println("item selecionado não é uma arma");
         return 0;

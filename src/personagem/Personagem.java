@@ -2,6 +2,11 @@ package personagem;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import habilidade.Habilidade;
+import habilidade.Habilidade_Ofensiva;
+import habilidade.Habilidade_Recuperacao;
+import habilidade.Habilidade_Buff;
 import item.Item;
 import item.Pocao;
 
@@ -21,6 +26,7 @@ public abstract class Personagem {
     private String classe;
     private Inventario inventario;
     private double moedas; // tem que fazer
+    private double buff_dano;
 
     // Construtor o personagem (falta a habilidade)
     public Personagem(String nome, String classe, double vida, double mana){
@@ -35,6 +41,7 @@ public abstract class Personagem {
         this.moedas = 0;
         this.experiencia_necessaria = nivel * 100;
         this.experiencia_atual = 0;
+        this.buff_dano = 0;
     }  
 
     // Metodos get (para obter acesso a informações)
@@ -82,6 +89,10 @@ public abstract class Personagem {
          return experiencia_atual;
       }
 
+      public double getBuff_dano(){
+        return buff_dano;
+     }
+
      // Metodos setter (para mudar informações quando necessário)
 
      public void setNivel(int nivel){
@@ -117,6 +128,10 @@ public abstract class Personagem {
         if (this.experiencia_atual >= this.experiencia_necessaria){
             subirNivel();
         }
+     }
+
+     public void setBuff_dano(double buff_dano){
+        this.buff_dano = buff_dano;
      }
 
      // Metodos abstratos que outras classes vão implementar e usar

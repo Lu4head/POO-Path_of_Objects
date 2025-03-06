@@ -41,8 +41,8 @@ public class GameUI {
         JPanel enemyPanel = new JPanel();
         enemyPanel.setBorder(BorderFactory.createTitledBorder("Monstro"));
         enemyPanel.setLayout(new GridLayout(2, 1));
-        enemyLifeBar = new JProgressBar(0, (int) monstro.getVida());
-        enemyLifeBar.setValue((int) monstro.getVida());
+        enemyLifeBar = new JProgressBar(0, (int) monstro.getVida_max());
+        enemyLifeBar.setValue((int) monstro.getVida_max());
         enemyLifeBar.setStringPainted(true);
         enemyPanel.add(new JLabel("Vida: "));
         enemyPanel.add(enemyLifeBar);
@@ -93,7 +93,7 @@ public class GameUI {
 
     private void updateUI() {
         lifeBar.setValue((int) personagem.getVida_Atual());
-        enemyLifeBar.setValue((int) monstro.getVida());
+        enemyLifeBar.setValue((int) monstro.getVida_max());
     }
 
     private void log(String message, Color color) {
@@ -102,17 +102,17 @@ public class GameUI {
     }
 
     private void attack() {
-        if (monstro.getVida() <= 0) {
+        if (monstro.getVida_max() <= 0) {
             log("O monstro já está morto!", Color.RED);
             return;
         }
 
         int itemIndex = attackBox.getSelectedIndex();
         double dano = personagem.atacar(itemIndex);
-        monstro.setVida(monstro.getVida() - dano);
+        monstro.setVida_max(monstro.getVida_max() - dano);
         log("Você causou " + dano + " de dano!", Color.YELLOW);
 
-        if (monstro.getVida() <= 0) {
+        if (monstro.getVida_max() <= 0) {
             log("Você derrotou o monstro!", Color.GREEN);
             proximoMonstro();
             return;
@@ -145,7 +145,7 @@ public class GameUI {
     }
 
     private void enemyTurn() {
-        if (monstro.getVida() <= 0) return;
+        if (monstro.getVida_max() <= 0) return;
 
         double dano = monstro.getDano();
         personagem.setVida_Atual(personagem.getVida_Atual() - dano);
