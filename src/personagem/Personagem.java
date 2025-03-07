@@ -2,11 +2,10 @@ package personagem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import habilidade.Habilidade;
-import habilidade.Habilidade_Ofensiva;
-import habilidade.Habilidade_Recuperacao;
-import habilidade.Habilidade_Buff;
+import habilidade.ListaHabilidades;
 import item.Item;
 import item.Pocao;
 
@@ -232,7 +231,46 @@ public abstract class Personagem {
          System.out.println("Sua vida e mana foram aumentadas em 50% e foram totalmente recuperadas");
          System.out.println("Sua experiência atual é " + this.experiencia_atual + " e a necessária para o próximo nível é " + this.experiencia_necessaria);
          System.out.println("Novos status - Vida: " + this.vida + ", Mana: " + this.mana);
+
+         
       }
+
+      public void ganharNovaHabilidade(){
+         System.out.println("Parabéns, você ganhou uma nova habilidade!");
+         System.out.println("Qual habilidade você deseja escolher?");
+         List<Habilidade> habilidadesSorteadas = ListaHabilidades.sortearHabilidades();
+         int escolha = 0;
+         while(escolha < 1 || escolha > habilidadesSorteadas.size()){
+            exibirHabilidades(habilidadesSorteadas);
+            System.out.println("Digite o número da habilidade que deseja escolher:");
+            escolha = obterEscolhaUsuario(1, habilidadesSorteadas.size());
+         }
+         this.habilidades.add(habilidadesSorteadas.get(escolha - 1));
+      }
+
+      private void exibirHabilidades(List<Habilidade> habilidades) {
+         for (int i = 0; i < habilidades.size(); i++) {
+            System.out.println((i + 1) + " - " + habilidades.get(i).getNome() + " - " + habilidades.get(i).getDescricao());
+         }
+      } 
+
+      private int obterEscolhaUsuario(int min, int max) {
+         try (Scanner scanner = new Scanner(System.in)) {
+            int escolha;
+            while (true) {
+                  System.out.print("Escolha: ");
+                  if (scanner.hasNextInt()) {
+                     escolha = scanner.nextInt();
+                     if (escolha >= min && escolha <= max) {
+                        return escolha;
+                     }
+                  }
+                  scanner.nextLine(); // Limpa buffer
+                  System.out.println("\033[1;31mOpção inválida! Tente novamente.\033[0m");
+            }
+         }
+      }
+
 
       public void exibirInventario() {
          System.out.println(" Inventário: ");
@@ -247,6 +285,18 @@ public abstract class Personagem {
          for (int i = 0; i < itens.size(); i++) {
              System.out.println("  [" + i + "] " + itens.get(i).getNome());
          }
+      }
+
+     public Habilidade usarHabilidade(){
+         System.out.println("Qual habilidade você deseja usar?");
+         int escolha = 0;
+         while(escolha < 1 || escolha > habilidades.size()){
+            for (int i = 0; i < habilidades.size(); i++) {
+               System.out.println( (i + 1) + " - " + habilidades.get(i).getNome() + " - " + habilidades.get(i).getDescricao());
+            }
+            System.out.println("Digite o número da habilidade que deseja usar:");
+            escolha = obterEscolhaUsuario(1, habilidades.size());
+         }
+         return habilidades.get(escolha - 1);
      }
-     
 }

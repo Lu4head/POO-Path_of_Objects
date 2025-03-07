@@ -1,5 +1,6 @@
 package habilidade;
 
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,5 +23,26 @@ public class ListaHabilidades {
         habilidades_buffs.add(new Habilidade_Buff("Aura da ira", "Aumenta o dano do personagem", 0, 1, 0, 0, 1.1));
         habilidades_buffs.add(new Habilidade_Buff("Benção do anjo", "Aumenta a vida max do personagem", 0, 1, 1.3, 0, 0));
         habilidades_buffs.add(new Habilidade_Buff("Fonte de energia", "Aumenta a mana max do personagem", 0, 1, 0, 1.2, 0));
+    }
+
+    public static List<Habilidade> sortearHabilidades(){
+        Random random = new Random();
+        List<Habilidade> habilidades_sorteadas = new ArrayList<>();
+        for( int i = 0; i < 3; i++){
+            int lista = random.nextInt(3);
+            if(lista == 0){
+                int index = random.nextInt(habilidades_dano.size());
+                habilidades_sorteadas.add(habilidades_dano.get(index));
+            }
+            else if(lista == 1){
+                int index = random.nextInt(habilidades_suporte.size());
+                habilidades_sorteadas.add(habilidades_suporte.get(index));
+            }
+            else if(lista == 2){
+                int index = random.nextInt(habilidades_buffs.size());
+                habilidades_sorteadas.add(habilidades_buffs.get(index));
+            }
+        }
+        return habilidades_sorteadas;
     }
 }
