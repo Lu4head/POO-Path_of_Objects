@@ -20,7 +20,6 @@ public class Habilidade_Recuperacao extends Habilidade{
         return mana;
     }
 
-    @Override
     public double usarHabilidade(Personagem jogador){
         if(jogador.getVida_Atual() + cura > jogador.getVida()){
             jogador.setVida_Atual(cura);

@@ -20,9 +20,9 @@ public class ListaHabilidades {
         habilidades_suporte.add(new Habilidade_Recuperacao("Cura Divina", "A luz divina da recuperação", 20, 5, 100, 0));
         habilidades_suporte.add(new Habilidade_Recuperacao("Cura de Água", "Cura de água pura", 30, 3, 50, 20));
 
-        habilidades_buffs.add(new Habilidade_Buff("Aura da ira", "Aumenta o dano do personagem", 0, 1, 0, 0, 1.1));
-        habilidades_buffs.add(new Habilidade_Buff("Benção do anjo", "Aumenta a vida max do personagem", 0, 1, 1.3, 0, 0));
-        habilidades_buffs.add(new Habilidade_Buff("Fonte de energia", "Aumenta a mana max do personagem", 0, 1, 0, 1.2, 0));
+        habilidades_buffs.add(new Habilidade_Buff("Aura da ira", "Aumenta o dano do personagem", 1, 1, 1, 1, 1.1));
+        habilidades_buffs.add(new Habilidade_Buff("Benção do anjo", "Aumenta a vida max do personagem", 1, 1, 1.3, 1, 1));
+        habilidades_buffs.add(new Habilidade_Buff("Fonte de energia", "Aumenta a mana max do personagem", 1, 1, 1, 1.2, 1));
     }
 
     public static List<Habilidade> sortearHabilidades(){

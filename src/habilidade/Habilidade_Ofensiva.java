@@ -1,7 +1,5 @@
 package habilidade;
 
-import personagem.Personagem;
-
 public class Habilidade_Ofensiva extends Habilidade{
     private double dano;
 
@@ -18,8 +16,4 @@ public class Habilidade_Ofensiva extends Habilidade{
         this.dano = dano;
     }
 
-    @Override
-    public double usarHabilidade(Personagem jogador){
-        return dano;
-    }
 }

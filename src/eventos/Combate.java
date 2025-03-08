@@ -22,12 +22,13 @@ public class Combate {
             // Exibe inventário
             System.out.println("\n\033[1;32m---- INVENTÁRIO ----\033[0m");
             personagem.exibirInventario();
+            
 
             // Turno do herói
             System.out.println("\n\033[1;32m-------- SEU TURNO --------\033[0m");
-            System.out.println("[1] - ATACAR\n[2] - CURAR\n[3] - RECUPERAR MANA");
+            System.out.println("[1] - ATACAR\n[2] - CURAR\n[3] - RECUPERAR MANA\n[4] - HABILIDADES");
 
-            int escolha = lerEscolha(1, 3);
+            int escolha = lerEscolha(1, 4);
 
             switch (escolha) {
                 case 1 -> {
@@ -58,6 +59,22 @@ public class Combate {
                         continue;
                     }
                     System.out.println("\033[1;31mVocê não tem itens de mana!\033[0m");
+                }
+                case 4 -> {
+                    if (personagem.getHabilidades().isEmpty()){
+                        System.out.println("Sem habilidades");
+                        continue;
+                    }
+                    personagem.exibirHabilidades();
+                    System.out.println("Escolha a habilidade que deseja usar");
+                    escolha = lerEscolha(0, personagem.getHabilidades().size() - 1);
+                    double habilidadeValor = personagem.usarHabilidade(escolha);
+
+                    if (habilidadeValor > 0){
+                    monstro.setVida_atual(monstro.getVida_atual() - habilidadeValor);
+                    System.out.println("\033[1;36mVocê causou " + habilidadeValor + " de dano no " + monstro.getNome() + "!\033[0m");
+                    }
+
                 }
             }
 
@@ -114,8 +131,10 @@ public class Combate {
         System.out.println("\n\033[1;36m--- STATUS ---\033[0m");
         System.out.println("\033[1;32m" + personagem.getNome() + " (Você)\033[0m");
         System.out.println("Vida: " + personagem.getVida_Atual() + "/" + personagem.getVida());
+        System.out.println("Nivel: " + personagem.getNivel());
         System.out.println("\033[1;31m" + monstro.getNome() + "\033[0m");
         System.out.println("Vida: " + monstro.getVida_atual() + "/" + monstro.getVida_max());
+        
         System.out.println("\033[1;36m----------------\033[0m\n");
     }
 }

@@ -1,6 +1,5 @@
 package habilidade;
 
-import personagem.Personagem;
 
 public abstract class Habilidade {
     private String nome;
@@ -35,5 +34,4 @@ public abstract class Habilidade {
         return nivel;
     }
 
-    public abstract double usarHabilidade(Personagem jogador);
 }

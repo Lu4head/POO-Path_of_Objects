@@ -31,7 +31,8 @@ public class Listaitens {
         itens_iniciais_mago.add(new Pocao("Poção Pequena de Mana", "Restaura 5 de mana",  1, 0, 5));
 
         // Itens Iniciais do Guerreiro
-        itens_iniciais_guerreiro.add(new Arma("Adaga de Treinamento", "Uma lâmina curta",  1, 20, 0));
+        itens_iniciais_guerreiro.add(new Arma("Adaga de Treinamento", "Uma lâmina curta",  1, 20
+        , 0));
         itens_iniciais_guerreiro.add(new Pocao("Poção Pequena de Cura", "Restaura 5 de vida",  1, 5, 0));
     }
 

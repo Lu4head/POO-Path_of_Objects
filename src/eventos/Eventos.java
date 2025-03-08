@@ -17,6 +17,7 @@ public class Eventos {
         this.scanner = new Scanner(System.in);
         this.random = new Random();
         this.combate = new Combate(); // Inicializa a classe de combate
+        this.loja = new Loja();
     }
 
     public void iniciar() {
@@ -69,7 +70,7 @@ public class Eventos {
         double vida = 30 + (nivelMonstro * 10) + random.nextInt(20);
         double dano = 5 + (nivelMonstro * 2) + random.nextInt(10);
 
-        return new Monstro(nome, vida, nivelMonstro, nivelMonstro, dano);
+        return new Monstro(nome, vida, 1000, nivelMonstro, dano);
     }
 
     private int obterEscolhaUsuario(int min, int max) {

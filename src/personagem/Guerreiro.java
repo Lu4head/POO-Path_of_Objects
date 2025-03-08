@@ -27,7 +27,7 @@ public class Guerreiro extends Personagem {
 
         if (item instanceof Arma) { // ajustar
             Arma arma = (Arma) item; // faz o cast para obter o dano da arma
-            return arma.getDano() * this.getBuff_dano();
+            return arma.getDano() * getBuff_dano();
         }
 
         System.out.println("item selecionado não é uma arma");

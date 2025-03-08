@@ -27,15 +27,11 @@ public class Habilidade_Buff extends Habilidade{
     }
 
     public void ApplyBuff(Personagem jogador){
-        jogador.setVida(jogador.getVida() * buff_vida * jogador.getNivel());
-        jogador.setMana(jogador.getMana() * buff_mana * jogador.getNivel());
-        jogador.setBuff_dano(jogador.getBuff_dano() * buff_dano * jogador.getNivel());
-    }
-
-    @Override
-    public double usarHabilidade(Personagem jogador){
-        System.out.println("Habilidades Passivas não podem ser usadas.");
-        return 0;
+        jogador.setVida(jogador.getVida() * buff_vida);
+        jogador.setMana(jogador.getMana() * buff_mana);
+        jogador.setVida_Atual(jogador.getVida());
+        jogador.setMana_Atual(jogador.getMana());
+        jogador.setBuff_dano(jogador.getBuff_dano() * buff_dano);
     }
     
 }
